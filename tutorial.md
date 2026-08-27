@@ -121,8 +121,3 @@ Essas diretrizes já aparecem representadas no wireframe (barra de acessibilidad
 5. Testar a usabilidade com um grupo pequeno de idosos e cuidadores reais antes do lançamento.
 
 ---
-
-## 9. Arquivos relacionados
-
-- `wireframe.html` — protótipo navegável de baixa fidelidade com as 6 telas principais do site.
-- `tutorial.md` — este documento, com a explicação e idealização do projeto.
