@@ -1,6 +1,7 @@
 # Tutorial — Portal do Idoso e do Cuidador
 
-## Idealização e explicação do projeto
+## Idealização e explicação do projeto  
+- Murillo Vassoler 10438656 - Matheus Maglio 10756191 - Ali Ahmad 10427712 - Pedro Henrique 10440155
 
 ---
 
