@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <!-- Cabeçalho-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lembrete de Remédios</title>
+    </head>
+    <body>
+        <!-- Navegação para as outras páginas -->
+        <nav id="header"> 
+            <h1>Bem-vindo de volta!</h1>
+            <h4>Espero que esteja cuidando de sua saúde!</h4>
+            <li>
+                <a href="lembrete.html"><button>Medicação</button></a>
+                <a href="mapa.html"><button>Navegação</button></a>
+                <a href="batePapo.html"><button>Cuidador</button></a>
+            </li>
+        </nav>
+        <!-- Article de cima, contém a frase + botão de adicionar remédio-->
+        <article class="container" id="Lembrete">
+            <h2>Lembrete de Remédios</h2>
+            <button id="Adicionar">Adicionar Remédio +</button>
+        </article>
+        <!-- article do meio, contém a lista de remédios da pessoa-->
+        <article class="container" id="Lista">
+            <ul>
+                <li>Remédio 1 - 08:00 AM</li> <button> Já tomei</button>
+                <li>Remédio 2 - 12:00 PM</li> <button> Já tomei</button>
+                <li>Remédio 3 - 06:00 PM</li> <button> Já tomei</button>
+            </ul>
+        </article>
+        <!-- article que exibe a barra de progresso, deve ficar em baixo-->
+        <article id="Progresso">
+            <h2>Progresso Diário</h2>
+            <!-- barra de progresso nativa do HTML -->
+            <progress value="33" max="100"></progress>
+        </article>
+    </body>
+</html>
