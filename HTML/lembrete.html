@@ -1,40 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <!-- Cabeçalho-->
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lembrete de Remédios</title>
-    </head>
-    <body>
-        <!-- Navegação para as outras páginas -->
-        <nav id="header"> 
-            <h1>Bem-vindo de volta!</h1>
-            <h4>Espero que esteja cuidando de sua saúde!</h4>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElderCare - Portal do Idoso e do Cuidador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barra de Acessibilidade -->
+    <div class="accessibility-bar">
+        <span>Acessibilidade:</span>
+        <button class="accessibility-btn" onclick="alterarFonte('menos')">A-</button>
+        <button class="accessibility-btn" onclick="alterarFonte('reset')">A</button>
+        <button class="accessibility-btn" onclick="alterarFonte('mais')">A+</button>
+        <button class="accessibility-btn" onclick="toggleContraste()" style="margin-left: 15px;">🌓 Contraste</button>
+    </div>
+
+    <!-- Menu Lateral -->
+    <nav>
+        <h1>ElderCare</h1>
+        <p><strong>Bem-vindo de volta!</strong><br>Extensão Universitária em Ação</p>
+        <ul>
             <li>
                 <a href="lembrete.html"><button>Medicação</button></a>
-                <a href="mapa.html"><button>Navegação</button></a>
-                <a href="batePapo.html"><button>Cuidador</button></a>
+                <a href="mapa.html"><button>Navegação / UBS</button></a>
+                <a href="index.html"><button class="active">Cuidador</button></a>
             </li>
-        </nav>
-        <!-- Article de cima, contém a frase + botão de adicionar remédio-->
-        <article class="container" id="Lembrete">
-            <h2>Lembrete de Remédios</h2>
-            <button id="Adicionar">Adicionar Remédio +</button>
-        </article>
-        <!-- article do meio, contém a lista de remédios da pessoa-->
-        <article class="container" id="Lista">
-            <ul>
-                <li>Remédio 1 - 08:00 AM</li> <button> Já tomei</button>
-                <li>Remédio 2 - 12:00 PM</li> <button> Já tomei</button>
-                <li>Remédio 3 - 06:00 PM</li> <button> Já tomei</button>
-            </ul>
-        </article>
-        <!-- article que exibe a barra de progresso, deve ficar em baixo-->
-        <article id="Progresso">
-            <h2>Progresso Diário</h2>
-            <!-- barra de progresso nativa do HTML -->
-            <progress value="33" max="100"></progress>
-        </article>
-    </body>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo Central -->
+    <section class="central-cuidador">
+        <h2>Central do Cuidador</h2>
+        <img src="projetoBorboleta/IMG/ms.jpg" alt="Maria Silva" width="160" height="160" onerror="this.src='https://via.placeholder.com/160?text=Maria+Silva'">
+        <p><strong>Maria Silva</strong><br>Cuidadora Principal</p>
+        <button class="btn-acao" onclick="alert('Abrindo perfil completo e histórico de extensão...')">Ver Perfil Completo</button>
+        <button class="btn-acao" onclick="alert('Ligando para a central de atendimento...')">Chamar Agora</button>
+    </section>
+
+    <!-- Chat Estilo WhatsApp/Telegram -->
+    <aside>
+        <h2>Bate-papo com Maria</h2>
+        <div class="chat-box" id="chatBox">
+            <div class="chat-mensagem">
+                <strong>Maria Silva</strong><br>
+                Olá! Já tomou o remédio da tarde?
+            </div>
+            <div class="chat-mensagem enviada">
+                <strong>Você</strong><br>
+                Sim, tomei agora pouco.
+            </div>
+            <div class="chat-mensagem">
+                <strong>Maria Silva</strong><br>
+                Ótimo! Estarei aí às 16h para o passeio.
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="mensagemInput" placeholder="Digite sua mensagem..." onkeypress="if(event.key === 'Enter') enviarMensagem()">
+            <button class="btn-enviar" onclick="enviarMensagem()">Enviar</button>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
 </html>
