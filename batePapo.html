@@ -1,67 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ElderCare - Portal do Idoso e do Cuidador</title>
-    <link rel="stylesheet" href="style.css">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- nav que deve ficar a esquerda da página-->
+<nav>
+  <h1>ElderCare</h1>
+  <p><strong>Bem vindo de volta!</strong><br>
+  Fique saudável hoje</p>
 
-    <!-- Barra de Acessibilidade -->
-    <div class="accessibility-bar">
-        <span>Acessibilidade:</span>
-        <button class="accessibility-btn" onclick="alterarFonte('menos')">A-</button>
-        <button class="accessibility-btn" onclick="alterarFonte('reset')">A</button>
-        <button class="accessibility-btn" onclick="alterarFonte('mais')">A+</button>
-        <button class="accessibility-btn" onclick="toggleContraste()" style="margin-left: 15px;">🌓 Contraste</button>
-    </div>
+  <ul>
+    <li>
+      <form action="index.html">
+        <button type="submit">Medicação</button>
+      </form>
+    </li>
+    <li>
+      <form action="mapa.html">
+        <button type="submit">Navegação</button>
+      </form>
+    </li>
+    <li>
+      <form action="batePapo.html">
+        <button type="submit">Cuidador</button>
+      </form>
+    </li>
+  </ul>
+</nav>
+<!-- section que deve ficar ao meio da página, onde será exibido informações sobre o cuidado(a)-->
+<section id="sectionCentral">
+  <h2>Central do Cuidador</h2>
+  <img src="projetoBorboleta\IMG\ms.jpg" alt="Maria Silva" width="220">
+  <p><strong>Maria Silva</strong><br>
+  Cuidadora Principal</p>
+  <p>Ver Perfil Completo</p>
+  <p>Chamar Agora</p>
+  </section>
 
-    <!-- Menu Lateral -->
-    <nav>
-        <h1>ElderCare</h1>
-        <p><strong>Bem-vindo de volta!</strong><br>Extensão Universitária em Ação</p>
-        <ul>
-            <li>
-                <a href="lembrete.html"><button>Medicação</button></a>
-                <a href="mapa.html"><button>Navegação / UBS</button></a>
-                <a href="index.html"><button class="active">Cuidador</button></a>
-            </li>
-        </ul>
-    </nav>
+<!--section que deve ficar a direita da página, onde ficará o chat-->
+<section id="sectionEsquerda">
+  <h2>Bate-papo com Maria</h2>
 
-    <!-- Conteúdo Central -->
-    <section class="central-cuidador">
-        <h2>Central do Cuidador</h2>
-        <img src="projetoBorboleta/IMG/ms.jpg" alt="Maria Silva" width="160" height="160" onerror="this.src='https://via.placeholder.com/160?text=Maria+Silva'">
-        <p><strong>Maria Silva</strong><br>Cuidadora Principal</p>
-        <button class="btn-acao" onclick="alert('Abrindo perfil completo e histórico de extensão...')">Ver Perfil Completo</button>
-        <button class="btn-acao" onclick="alert('Ligando para a central de atendimento...')">Chamar Agora</button>
-    </section>
+  <p><strong>Maria Silva</strong><br>
+  Olá! Já tomou o remédio da tarde?</p>
 
-    <!-- Chat Estilo WhatsApp/Telegram -->
-    <aside>
-        <h2>Bate-papo com Maria</h2>
-        <div class="chat-box" id="chatBox">
-            <div class="chat-mensagem">
-                <strong>Maria Silva</strong><br>
-                Olá! Já tomou o remédio da tarde?
-            </div>
-            <div class="chat-mensagem enviada">
-                <strong>Você</strong><br>
-                Sim, tomei agora pouco.
-            </div>
-            <div class="chat-mensagem">
-                <strong>Maria Silva</strong><br>
-                Ótimo! Estarei aí às 16h para o passeio.
-            </div>
-        </div>
-        <div class="chat-input-area">
-            <input type="text" id="mensagemInput" placeholder="Digite sua mensagem..." onkeypress="if(event.key === 'Enter') enviarMensagem()">
-            <button class="btn-enviar" onclick="enviarMensagem()">Enviar</button>
-        </div>
-    </aside>
+  <p><strong>Você</strong><br>
+  Sim, tomei agora pouco.</p>
 
-    <script src="script.js"></script>
+  <p><strong>Maria Silva</strong><br>
+  Ótimo! Estarei aí às 16h para o passeio.</p>
+
+  <p>Escreva sua mensagem:</p>
+  <input type="text" placeholder="Digite aqui...">
+  <button>Enviar</button>
+  </section>
+
 </body>
 </html>
