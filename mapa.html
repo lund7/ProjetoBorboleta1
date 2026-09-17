@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElderCare - Mapa e Serviços</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="accessibility-bar">
+        <span>Acessibilidade:</span>
+        <button class="accessibility-btn" onclick="alterarFonte('menos')">A-</button>
+        <button class="accessibility-btn" onclick="alterarFonte('reset')">A</button>
+        <button class="accessibility-btn" onclick="alterarFonte('mais')">A+</button>
+        <button class="accessibility-btn" onclick="toggleContraste()" style="margin-left: 15px;">🌓 Contraste</button>
+    </div>
+
+    <nav>
+        <h1>ElderCare</h1>
+        <p><strong>Bem-vindo de volta!</strong><br>Extensão Universitária em Ação</p>
+        <ul>
+            <li>
+                <a href="lembrete.html"><button>Medicação</button></a>
+                <a href="mapa.html"><button class="active">Navegação / UBS</button></a>
+                <a href="index.html"><button>Cuidador</button></a>
+            </li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Rede de Apoio Local</h2>
+        <div id="Botões">
+            <button onclick="alert('Buscando UBS mais próxima via geolocalização...')">UBS próxima</button>
+            <button onclick="alert('Buscando Hospitais de referência...')">Hospital próximo</button>
+            <button id="emergencia">Emergência</button>
+        </div>
+
+        <article id="Mapa" style="background-color: var(--secondary-color); border: 2px dashed var(--accent-color); text-align: center; justify-content: center; flex: 1; border-radius: 12px; padding: 40px;">
+            <h2>Mapa de Serviços Integrado</h2>
+            <p style="color: var(--text-muted); margin-top: 8px;">Aqui serão carregados os pontos da rede local (CRAS, UBS e ILPIs) cadastrados pelo projeto de extensão.</p>
+        </article>
+    </section>
+
+    <aside>
+        <h2>Bate-papo com Maria</h2>
+        <div class="chat-box" id="chatBox">
+            <div class="chat-mensagem">
+                <strong>Maria Silva</strong><br>
+                Precisa de ajuda para traçar uma rota até a UBS?
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="mensagemInput" placeholder="Digite sua mensagem..." onkeypress="if(event.key === 'Enter') enviarMensagem()">
+            <button class="btn-enviar" onclick="enviarMensagem()">Enviar</button>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
