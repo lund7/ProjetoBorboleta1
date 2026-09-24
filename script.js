@@ -979,3 +979,91 @@ document.addEventListener(
         renderizarLista();
     }
 );
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const mensagens = document.getElementById("chatMensagens");
+  const sugestoes = document.getElementById("sugestoes");
+  const input = document.getElementById("mensagemInput");
+  const botaoEnviar = document.getElementById("enviarBtn");
+
+  if (!mensagens || !sugestoes) return;
+
+  const CHAVE_STORAGE = "batePapoMensagens";
+
+  const perguntasRespostas = [
+    { pergunta: "Que horas você vem hoje?", resposta: "Vou chegar às 16h, como combinado." },
+    { pergunta: "Posso tomar o remédio mais tarde?", resposta: "Pode, mas tente não atrasar muito o horário." },
+    { pergunta: "Você pode me ajudar com o almoço?", resposta: "Claro, chego em breve para te ajudar." },
+    { pergunta: "Estou com dor, o que eu faço?", resposta: "Vou até aí agora, aguenta firme." },
+    { pergunta: "Podemos marcar uma consulta médica?", resposta: "Posso ligar para o consultório amanhã de manhã." }
+  ];
+
+  function salvarMensagens() {
+    const lista = [];
+    mensagens.querySelectorAll("p").forEach(function (p) {
+      const autor = p.querySelector("strong").textContent;
+      const texto = p.lastChild.textContent;
+      lista.push({ autor: autor, texto: texto });
+    });
+    localStorage.setItem(CHAVE_STORAGE, JSON.stringify(lista));
+  }
+
+  function carregarMensagens() {
+    const salvo = localStorage.getItem(CHAVE_STORAGE);
+    if (!salvo) return;
+    const lista = JSON.parse(salvo);
+    mensagens.innerHTML = "";
+    lista.forEach(function (item) {
+      criarMensagemNoDOM(item.autor, item.texto);
+    });
+  }
+
+  function criarMensagemNoDOM(autor, texto) {
+    const p = document.createElement("p");
+    const strong = document.createElement("strong");
+    strong.textContent = autor;
+    p.appendChild(strong);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(document.createTextNode(texto));
+    mensagens.appendChild(p);
+  }
+
+  function adicionarMensagem(autor, texto) {
+    criarMensagemNoDOM(autor, texto);
+    mensagens.scrollTop = mensagens.scrollHeight;
+    salvarMensagens();
+  }
+
+  function enviarPergunta(pergunta, resposta) {
+    adicionarMensagem("Você", pergunta);
+    setTimeout(function () {
+      adicionarMensagem("Maria Silva", resposta);
+    }, 800);
+  }
+
+  perguntasRespostas.forEach(function (item) {
+    const botao = document.createElement("button");
+    botao.type = "button";
+    botao.textContent = item.pergunta;
+    botao.addEventListener("click", function () {
+      enviarPergunta(item.pergunta, item.resposta);
+    });
+    sugestoes.appendChild(botao);
+  });
+
+  if (input && botaoEnviar) {
+    botaoEnviar.addEventListener("click", function () {
+      const texto = input.value.trim();
+      if (texto === "") return;
+      adicionarMensagem("Você", texto);
+      input.value = "";
+      setTimeout(function () {
+        adicionarMensagem("Maria Silva", "Recebi sua mensagem, já te respondo!");
+      }, 800);
+    });
+  }
+
+  carregarMensagens();
+
+});
