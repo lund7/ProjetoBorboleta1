@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mapa</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 <body>
   <!-- nav que deve ficar a esquerda da página-->
@@ -43,21 +44,20 @@
 
 <!--section que deve ficar a direita da página, onde ficará o chat-->
 <section id="sectionEsquerda">
-  <h2>Bate-papo com Maria</h2>
+<h2>Bate-papo com Maria</h2>
 
-  <p><strong>Maria Silva</strong><br>
-  Olá! Já tomou o remédio da tarde?</p>
+<div id="chatMensagens">
+<p><strong>Maria Silva</strong><br>
+Olá! Já tomou o remédio da tarde?</p>
+<p><strong>Você</strong><br>
+Sim, tomei agora pouco.</p>
+<p><strong>Maria Silva</strong><br>
+Ótimo! Estarei aí às 16h para o passeio.</p>
+</div>
 
-  <p><strong>Você</strong><br>
-  Sim, tomei agora pouco.</p>
+<div id="sugestoes"></div>
 
-  <p><strong>Maria Silva</strong><br>
-  Ótimo! Estarei aí às 16h para o passeio.</p>
-
-  <p>Escreva sua mensagem:</p>
-  <input type="text" placeholder="Digite aqui...">
-  <button>Enviar</button>
-  </section>
+</section>
 
 </body>
 </html>
