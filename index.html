@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ElderCare - Lembrete de Remédios</title>
     <link rel="stylesheet" href="style.css">
+    <script src="remedio.js"></script>
 </head>
 <body>
 
@@ -50,7 +51,7 @@
                     <button>Navegação / UBS</button>
                 </a>
 
-                <a href="index.html">
+                <a href="batePapo.html">
                     <button>Cuidador</button>
                 </a>
             </li>
@@ -101,31 +102,18 @@
     </section>
 
     <aside>
-        <h2>Bate-papo com Maria</h2>
+    <h2>Bate-papo com Maria</h2>
 
-        <div class="chat-box" id="chatBox">
-            <div class="chat-mensagem">
-                <strong>Maria Silva</strong><br>
-                Não se esqueça de registrar os remédios após tomar!
-            </div>
+    <div class="chat-box" id="chatBox">
+        <div class="chat-mensagem">
+            <strong>Maria Silva</strong><br>
+            Não se esqueça de registrar os remédios após tomar!
         </div>
+    </div>
 
-        <div class="chat-input-area">
-            <input
-                type="text"
-                id="mensagemInput"
-                placeholder="Digite sua mensagem..."
-                onkeypress="if(event.key === 'Enter') enviarMensagem()"
-            >
+    <div id="sugestoes"></div>
 
-            <button
-                class="btn-enviar"
-                onclick="enviarMensagem()"
-            >
-                Enviar
-            </button>
-        </div>
-    </aside>
+</aside>
 
     <script src="script.js"></script>
 
